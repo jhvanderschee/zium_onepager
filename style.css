@@ -3,7 +3,7 @@ html {font-size: 20px; scroll-behavior: smooth;}
 body {font-family: 'Space Grotesk', sans-serif; line-height: 1.4; font-size: 0.8rem; font-weight: 500; letter-spacing: .05em;}
 body, a {color: #212121; text-decoration: none;}
 img {display: block; max-width: 100%;}
-.container {max-width: 60rem; margin: 0 auto;}
+.container {max-width: 62rem; margin: 0 auto; padding: 0 1rem;}
 .button {
     background: rgb(60, 133, 153);
     padding: 1rem 3.6rem 1rem 1.8rem;
@@ -14,6 +14,14 @@ img {display: block; max-width: 100%;}
 }
 .button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);}
 .button:hover {background: #212121;}
+.backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); color: transparent; font-weight: 700; position: absolute; user-select: none; line-height: 1; z-index: -1;}
+.arrowlink {overflow: hidden;}
+.arrowlink, .arrowlink::before {cursor: pointer; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
+.arrowlink::before {content: ""; margin-left: -2rem;  filter: contrast(0.1) sepia(100%) contrast(1.5) hue-rotate(145deg);}
+a:hover .arrowlink, .arrowlink:hover {background-position: 1.35rem center;}
+a:hover .arrowlink::before, .arrowlink:hover::before {margin-left: 0;}
+.pretitle {font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; font-weight: 600;}
+.title {font-size: 2.4rem; font-weight: 700; line-height: 1;}
 
 header {height: 5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: rgba(0, 0, 0, 0.1) 0rem 0rem 1.5rem 0rem; position: fixed; z-index: 9; width: 100%; background: white;}
 header h1 a img {height: 2.2rem;}
@@ -29,12 +37,12 @@ section:target {display: block;}
 .carousel {position: relative;}
 .carousel ul {overflow: auto; display: flex; flex-wrap: nowrap; scroll-snap-type: x mandatory; scroll-behavior: smooth; background: gray; -ms-overflow-style: none; scrollbar-width: none; margin: 0; padding: 0;}
 .carousel ul::-webkit-scrollbar {display: none; /* Hide scrollbar for Chrome, Safari and Opera */} 
-.carousel ul li {position: relative; min-width: 100%; list-style: none; background: url() center center / cover no-repeat; scroll-snap-align: start; height: 44rem;}
+.carousel ul li {position: relative; min-width: 100%; list-style: none; background: url() center 40% / cover no-repeat; scroll-snap-align: start; height: 44rem;}
 .carousel ul li .container {height: 100%; display: flex; justify-content: center; flex-direction: column; opacity: 0; transition: opacity 0.3s ease-in-out;}
 .carousel ul li.selected .container {opacity: 1; padding-bottom: 5rem;}
-.carousel ul li .container .pretitle {font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.75rem;}
-.carousel ul li .container .title {font-size: 5rem; font-weight: 700; line-height: 1; max-width: 37rem; margin-bottom: 2rem;}
-.carousel .carouselnav {position: absolute; bottom: 1rem; font-size: 0.7rem; font-weight: 600; display: flex; align-items: center; letter-spacing: 0.5em;}
+.carousel ul li .container .pretitle {margin-bottom: 0.75rem;}
+.carousel ul li .container .title {font-size: 5rem; max-width: 37rem; margin-bottom: 2rem;}
+.carousel .carouselnav {position: absolute; bottom: 1.5rem; font-size: 0.7rem; font-weight: 600; display: flex; align-items: center; letter-spacing: 0.5em; user-select: none;}
 .carousel .carouselnav ol {display: inline-block; margin-left: 0.3rem;}
 .carousel .carouselnav ol li {list-style: none; display: none;}
 .carousel .carouselnav ol li.selected {display: inline;}
@@ -42,9 +50,20 @@ section:target {display: block;}
 .carousel .carouselnav .prev,.carousel .carouselnav .next {cursor: pointer; width: 2.25rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / contain no-repeat;}
 .carousel .carouselnav .prev {transform: rotate(180deg);}
 
-.reasons {display: flex; justify-content: center; flex-wrap: wrap;}
-.reasons > div {width: 20rem;}
-.reasons > div h2 {font-weight: 500; font-size: 1.5rem;}
+.reasons .container {display: flex; justify-content: center; flex-wrap: wrap; padding: 6.5rem 0;}
+.reasons .container > a {width: 20rem; padding: 4.8rem 2.8rem 0 2.8rem; position: relative;}
+.reasons .container > a .backgroundtext {font-size: 7.5rem; left: 0; top: 0;}
+.reasons .container > a h2 {font-weight: 500; font-size: 1.5rem; margin-bottom: 0.5rem;}
+.reasons .container > a p {font-weight: 400; line-height: 2; font-size: 0.75rem; letter-spacing: 0; margin-bottom: 0.5rem;}
+.reasons .container > a .backgroundtext {transition: all 0.25s ease-in-out;}
+.reasons .container > a:hover .backgroundtext {color: #f2f2f2; -webkit-text-stroke-color: #f2f2f2;}
+@media screen and (max-width: 600px) {
+    .reasons .container > a {width: 100%; padding-right: 1rem;}
+}
 
+.benefits {background: #212121; color: white; position: relative; z-index: -1; overflow: hidden;}
+.benefits a {color: white;}
+.benefits .container {padding: 6rem 0; }
+.benefits .backgroundtext {font-size: 40rem; margin: -10rem 0 0 31rem; filter: invert(100%); opacity: 0.75;}
 
 footer {background: #212121;}
