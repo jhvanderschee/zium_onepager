@@ -4,11 +4,10 @@ body {font-family: 'Space Grotesk', sans-serif; line-height: 1.4; font-size: 0.8
 body, a {color: #212121; text-decoration: none;}
 img {display: block; max-width: 100%;}
 .container {max-width: 62rem; margin: 0 auto; padding: 0 1rem;}
-.button {background: rgb(60, 133, 153); padding: 1rem 3.6rem 1rem 1.8rem; color: white; display: inline-block; position: relative; transition: background 0.3s ease-in-out;}
+.button {background: rgb(60, 133, 153); padding: 0.85rem 3.6rem 0.85rem 1.8rem; color: white; display: inline-block; position: relative; transition: background 0.3s ease-in-out;}
 .button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out;}
 .button:hover {background: #212121;}
 .button:hover::before, .button:hover::after {right: 1rem;}
-
 .backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); color: transparent; font-weight: 700; position: absolute; line-height: 1; z-index: -1; pointer-events: none;}
 .arrowlink {overflow: hidden;}
 .arrowlink, .arrowlink::before {cursor: pointer; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
@@ -19,6 +18,20 @@ a:hover .arrowlink::before, .arrowlink:hover::before {margin-left: 0;}
 .pretitle.label {background: rgb(60, 133, 153); display: inline-block; line-height: 1.15;}
 .title {font-size: 2.4rem; font-weight: 700; line-height: 1.25;}
 p {font-weight: 400; line-height: 2; font-size: 0.75rem; letter-spacing: 0; margin-bottom: 0.5rem;}
+.linkspan {font-size: 1.5rem; display: inline-block; margin-bottom: 0.5rem; letter-spacing: 0;}
+
+.row {display: flex; flex-direction: row-reverse; gap: 5rem;}
+.row > div {width: calc(50% - 2.5rem);}
+.row > div > img {margin: -9rem 0 0 -7rem; max-width: calc(100% + 6rem);}
+.row + .row {flex-direction: row;}
+.row + .row > div > img {margin: 0 -7rem -9rem 0;}
+@media screen and (max-width: 60rem) {
+    .row {flex-direction: column!important;}
+    .row > div {width: 100%;}
+    .row > div > img {margin: -2.5rem 0 0!important; max-width: 100%;}
+}
+
+
 
 header {height: 5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: rgba(0, 0, 0, 0.1) 0rem 0rem 1.5rem 0rem; position: fixed; z-index: 9; width: 100%; background: white;}
 header h1 a img {height: 2.2rem;}
@@ -30,6 +43,8 @@ header nav {display: flex; gap: 2.5rem;}
 
 section {padding-top: 5rem; display: none;}
 section:target {display: block;}
+
+
 
 .carousel {position: relative;}
 .carousel ul {overflow: auto; display: flex; flex-wrap: nowrap; scroll-snap-type: x mandatory; scroll-behavior: smooth; background: gray; -ms-overflow-style: none; scrollbar-width: none; margin: 0; padding: 0;}
@@ -47,6 +62,8 @@ section:target {display: block;}
 .carousel .carouselnav .prev,.carousel .carouselnav .next {cursor: pointer; width: 2.25rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / contain no-repeat;}
 .carousel .carouselnav .prev {transform: rotate(180deg);}
 
+
+
 .reasons {padding: 6.5rem 0 8rem;}
 .reasons .container {display: flex; justify-content: center; flex-wrap: wrap;}
 .reasons .container > a {width: 20rem; padding: 4.8rem 2.8rem 0 2.8rem; position: relative;}
@@ -58,26 +75,31 @@ section:target {display: block;}
     .reasons .container > a {width: 100%; padding-right: 1rem;}
 }
 
+
+
 .benefits {background: #212121; color: white; position: relative; padding: 6rem 0 6rem;}
 .benefits a {color: white;}
 .benefits .container {position: relative; z-index: 2;}
 .benefits .backgroundtext {font-size: 40rem; margin: -13.3rem 0 0 31rem; filter: invert(100%); opacity: 0.5;}
 .benefits .container .pretitle {font-size: 0.8rem;}
-.benefits .container .row {display: flex; flex-direction: row-reverse; gap: 5rem;}
-.benefits .container .row > div {width: calc(50% - 2.5rem);}
-.benefits .container .row > div > img {margin: -9rem 0 0 -7rem; max-width: calc(100% + 6rem);}
-.benefits .container .row + .row {flex-direction: row;}
-.benefits .container .row + .row > div > img {margin: 0 -7rem -9rem 0;}
-.benefits .container .row .pretitle {margin-bottom: 0.8rem;}
-.benefits .container .row ul {margin-left: 1.75rem;}
-.benefits .container .row ul li {max-width: 20rem; margin: 2rem 0 0; font-size: 2rem; padding-left: 0.5rem;}
-.benefits .container .row ul li a {display: block;}
-.benefits .container .row ul li a span {font-size: 1.5rem; display: inline-block; margin-bottom: 0.5rem; letter-spacing: 0;}
-@media screen and (max-width: 60rem) {
-    .benefits .container .row {flex-direction: column!important;}
-    .benefits .container .row > div {width: 100%;}
-    .benefits .container .row > div > img {margin: -2.5rem 0 0!important; max-width: 100%;}
-}
+.benefits .pretitle {margin-bottom: 0.8rem;}
+.benefits ul {margin-left: 1.75rem;}
+.benefits ul li {max-width: 20rem; margin: 2rem 0 0; font-size: 2rem; padding-left: 0.5rem;}
+.benefits ul li a {display: block;}
 
+
+
+
+
+.trainings {padding: 8rem 0;}
+.trainings .container .row {flex-direction: row; gap: 3.5rem;}
+.trainings .container .row > div:first-child {width: 16.5rem;}
+.trainings .container .row > div:last-child {column-count: 2; column-gap: 3rem; width: calc(100% - 20rem);}
+.trainings .container .row > div:last-child a {display: block; break-inside: avoid-column;}
+.trainings .container .row > div:last-child a + a {padding-top: 3rem;}
+.trainings .container .row > div:last-child a img {margin-bottom: 0.5rem;}
+.trainings .container .row > div:last-child a span {margin-bottom: 0;}
+.trainings .pretitle {background: #212121; color: white; margin-bottom: 0.8rem;}
+.trainings h2 {margin-bottom: 1.5rem;}
 
 footer {background: #212121;}
