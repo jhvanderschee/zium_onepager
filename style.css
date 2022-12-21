@@ -8,7 +8,7 @@ img {display: block; max-width: 100%;}
 .button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out;}
 .button:hover {background: #212121;}
 .button:hover::before, .button:hover::after {right: 1rem;}
-.backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); color: transparent; font-weight: 700; position: absolute; line-height: 1; z-index: -1; pointer-events: none;}
+.backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.2); color: transparent; font-weight: 700; position: absolute; line-height: 0.9; z-index: -1; pointer-events: none; font-size: 40rem; opacity: 0.6;}
 .arrowlink {overflow: hidden;}
 .arrowlink, .arrowlink::before {cursor: pointer; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
 .arrowlink::before {content: ""; margin-left: -2rem;  filter: contrast(0.1) sepia(100%) contrast(1.5) hue-rotate(145deg);}
@@ -80,7 +80,7 @@ section:target {display: block;}
 .benefits {background: #212121; color: white; position: relative; padding: 6rem 0 6rem;}
 .benefits a {color: white;}
 .benefits .container {position: relative; z-index: 2;}
-.benefits .backgroundtext {font-size: 40rem; margin: -13.3rem 0 0 31rem; filter: invert(100%); opacity: 0.5;}
+.benefits .backgroundtext {margin: -12rem 0 0 31rem; filter: invert(100%);}
 .benefits .container .pretitle {font-size: 0.8rem;}
 .benefits .pretitle {margin-bottom: 0.8rem;}
 .benefits ul {margin-left: 1.75rem;}
@@ -92,6 +92,7 @@ section:target {display: block;}
 
 
 .trainings {padding: 8rem 0;}
+.trainings .backgroundtext {margin: -4rem 0 0 -21rem;}
 .trainings .container .row {flex-direction: row; gap: 3.5rem;}
 .trainings .container .row > div:first-child {width: 16.5rem;}
 .trainings .container .row > div:last-child {column-count: 2; column-gap: 3rem; width: calc(100% - 20rem);}
@@ -99,6 +100,7 @@ section:target {display: block;}
 .trainings .container .row > div:last-child a + a {padding-top: 3rem;}
 .trainings .container .row > div:last-child a img {margin-bottom: 0.5rem;}
 .trainings .container .row > div:last-child a span {margin-bottom: 0;}
+.trainings .container .row > div .sticky {position: sticky; top: 8rem;}
 .trainings .pretitle {background: #212121; color: white; margin-bottom: 0.8rem;}
 .trainings h2 {margin-bottom: 1.5rem;}
 
