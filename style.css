@@ -134,6 +134,7 @@ section > div {padding: 6rem 0 6rem;}
     display: flex;
     align-items: center;
 }
+.marquee:hover span {animation-play-state: paused;}
 .marquee span::after {
     content: "";
     width: 1.1rem;
@@ -186,10 +187,13 @@ section > div {padding: 6rem 0 6rem;}
 
 
 
-.trainers {text-align: center;}
+.trainers {text-align: center; padding-bottom: 5rem;}
 .trainers .title {max-width: 30rem; margin-left: auto; margin-right: auto; margin-bottom: 3rem;}
+.trainers .container > div > .pretitle.label {font-size: 0.8rem;}
 .trainers .container > div::nth-child(1) {text-align: center;}
-
+.trainers .container > div.row {gap: 3rem;}
+.trainers .container > div.row .pretitle.label {background: white; color: rgb(60, 133, 153);}
+.trainers .container > div.row h3 {font-size: 1.15rem; font-weight: 500; margin: 1rem 0 0.25rem;}
 
 
 
@@ -208,17 +212,16 @@ section > div {padding: 6rem 0 6rem;}
 
 
 .blog {padding: 6.5rem 0;}
+.blog .container > .pretitle.label {font-size: 0.8rem;}
 .blog .container > div:nth-child(2) {display: flex; justify-content: space-between; align-items: center;}
 .blog .container > div:nth-child(2) > h2 {max-width: 30rem;}
 .blog .container > div.row {gap: 1.5rem; padding-top: 2.1rem;}
 .blog .container > div.row > a {position: relative; display: flex; flex-direction: column;}
-.blog .container > div.row > a .label:first-child {position: absolute; background: rgb(60, 133, 153); top: 1.1rem; letter-spacing: 0.25em; padding-left: 1rem; transition: all 0.3s ease-in-out;}
-.blog .container > div.row > a:hover .label:first-child {background: white; color: #212121;}
-.blog .container > div.row > a img + .label {background: white; color: rgba(0,0,0,0.5); padding-left: 0; margin-top: 1.2rem; position: relative; top: 0.1rem; transition: all 0.3s ease-in-out;}
-.blog .container > div.row > a:hover img + .label {color: #212121;}
-.blog .container > div.row > a h3 {font-size: 1.18rem; transition: all 0.3s ease-in-out;}
-.blog .container > div.row > a:hover h3 {color: rgb(60, 133, 153);}
-.blog .container > div.row > a .arrowlink {position: relative; top: 0.1rem;}
+.blog .container > div.row > a .label:first-child {position: absolute; background: rgb(60, 133, 153); top: 1.1rem; letter-spacing: 0.25em; padding-left: 1rem;}
+.blog .container > div.row > a img + .label {background: white; color: rgba(0,0,0,0.5); padding-left: 0; margin-top: 1.2rem; position: relative; top: 0.1rem;}
+.blog .container > div.row > a h3 {font-size: 1.18rem; text-decoration: underline 2px transparent; transition: all 0.3s ease-in-out;}
+.blog .container > div.row > a:hover h3 {text-decoration: underline 2px #212121;}
+.blog .container > div.row > a .arrowlink {position: relative; top: 0.2rem;}
 
 
 
