@@ -86,8 +86,9 @@ section:target {display: block;}
 .benefits ul {margin-left: 1.75rem;}
 .benefits ul li {max-width: 20rem; margin: 2rem 0 0; font-size: 2rem; padding-left: 0.5rem;}
 .benefits ul li a {display: block;}
-
-
+.benefits ul li a div {display: flex; gap: 1rem;}
+.benefits ul li a div .arrowlink {filter: invert(100%);}
+.benefits ul li a:hover div .arrowlink {filter: invert(0%);}
 
 
 
@@ -100,9 +101,11 @@ section:target {display: block;}
 .trainings .container .row > div:last-child a + a {padding-top: 3rem;}
 .trainings .container .row > div:last-child a img {margin-bottom: 0.5rem;}
 .trainings .container .row > div:last-child a span {margin-bottom: 0;}
+.trainings .container .row > div:last-child a div {display: flex; justify-content: space-between;}
 .trainings .container .row > div .sticky {position: sticky; top: 8rem;}
 .trainings .pretitle {background: #212121; color: white; margin-bottom: 0.8rem;}
 .trainings h2 {margin-bottom: 1.5rem;}
+
 
 
 
@@ -122,7 +125,7 @@ section:target {display: block;}
 }
 .marquee span {
     animation-name: marquee;
-    animation-duration: 20s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     white-space: nowrap;
