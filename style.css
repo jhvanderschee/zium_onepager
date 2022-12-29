@@ -10,7 +10,7 @@ img {display: block; max-width: 100%;}
 .button:hover::before, .button:hover::after {right: 1rem;}
 .backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.25); color: transparent; font-weight: 700; position: absolute; line-height: 0.9; z-index: -1; pointer-events: none; font-size: 40rem; opacity: 0.6; user-select: none;}
 .arrowlink {overflow: hidden;}
-.arrowlink, .arrowlink::before {cursor: pointer; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
+.arrowlink, .arrowlink::before {cursor: pointer; min-width: 1.35rem; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
 .arrowlink::before {content: ""; margin-left: -2rem;  filter: contrast(0.1) sepia(100%) contrast(1.5) hue-rotate(145deg);}
 a:hover .arrowlink, .arrowlink:hover {background-position: 1.35rem center;}
 a:hover .arrowlink::before, .arrowlink:hover::before {margin-left: 0;}
@@ -42,7 +42,7 @@ a:hover .img img {transform: scale(1.05);}
     opacity: 0;
 }
 a:hover .img::after {opacity: 1;}
-.row {display: flex; gap: 5rem;}
+.row {display: flex; gap: 5rem; justify-content: center;}
 .row > div {width: calc(50% - 2.5rem);}
 @media screen and (max-width: 60rem) {
     .row {flex-direction: column!important;}
@@ -51,6 +51,7 @@ a:hover .img::after {opacity: 1;}
 section {padding-top: 5rem; display: none;}
 section:target {display: block;}
 section > div {padding: 6rem 0 6rem;}
+
 
 
 
@@ -153,6 +154,7 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 
 
 
+
 .benefits {position: relative;}
 .benefits .backgroundtext {margin: -12rem 0 0 31rem;}
 .benefits ul {margin-left: 1.75rem;}
@@ -185,7 +187,12 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 .trainings .container .row > div:last-child a div {display: flex; justify-content: space-between;}
 .trainings .container .row > div .sticky {position: sticky; top: 8rem;}
 .trainings h2 {margin-bottom: 1.5rem;}
-
+@media screen and (max-width: 60rem) {
+    .trainings .container .row > div:first-child, .trainings .container .row > div:last-child {width: 100%;}
+}
+@media screen and (max-width: 35rem) {
+    .trainings .container .row > div:last-child {column-gap: 1.25rem;}
+}
 
 
 
@@ -241,6 +248,7 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 .offer {text-align: center; padding: 7rem 0 6rem;}
 .offer .icon {width: 3rem; display: inline-block; margin-bottom: 0.5rem;}
 .offer .row {gap: 3rem; margin-bottom: 3rem;}
+.offer .row > div {max-width: 20rem; margin: 0 auto;}
 .offer .row h3 {margin-bottom: 0.35rem;}
 .offer .title {max-width: 30rem; margin-left: auto; margin-right: auto; margin-bottom: 3rem;}
 .offer .backgroundtext {margin: -3.25rem 0 0 -10rem; font-size: 31rem; font-weight: 500;}
@@ -295,10 +303,16 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 
 .numbers {background: rgb(60, 133, 153);}
 .numbers .row div {display: flex; align-items: center; gap: 0.8rem; font-size: 0.84rem;}
-.numbers .row div .backgroundtext {margin: 0 0 0 1.37rem; font-size: 9rem; -webkit-text-stroke: 1px rgba(0,0,0,0.45);}
+.numbers .row div .backgroundtext {margin: 0 0 0 3.5rem; font-size: 9rem; -webkit-text-stroke: 1px rgba(0,0,0,0.45);}
 .numbers .row div span {display: block}
 .numbers .row div span:nth-child(2) {font-size: 3.5rem; font-weight: 700;}
 .numbers .row div span:nth-child(3) {font-weight: 400;}
+@media screen and (max-width: 70rem) {
+    .numbers .row > div {justify-content: center;}
+    .numbers .row > div {position: relative; right: 1rem;}
+    .numbers .row div span {width: 50%;}
+    .numbers .row div .backgroundtext + span {text-align: right;}
+}
 
 
 
@@ -337,6 +351,14 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 .blog .container > div.row > a h3 {font-size: 1.18rem; text-decoration: underline 2px transparent; transition: all 0.3s ease-in-out;}
 .blog .container > div.row > a:hover h3 {text-decoration: underline 2px #212121;}
 .blog .container > div.row > a .arrowlink {position: relative; top: 0.2rem;}
+@media screen and (max-width: 60rem) {
+    .blog .container > div.row {flex-direction: row!important; flex-wrap: wrap;}
+    .blog .container > div.row > a {width: calc(50% - 0.75rem);}
+}
+@media screen and (max-width: 35rem) {
+    .blog .container > div.row {flex-direction: column!important;}
+    .blog .container > div.row > a {width: 100%;}
+}
 
 
 
@@ -364,6 +386,9 @@ footer .afterfooter a {color:rgba(255, 255, 255, 0.65); transition: color 0.2s e
 footer .afterfooter a:hover {color: #3C8599;}
 @media screen and (max-width: 71.5rem) {
     footer .row .span3 {grid-column: span 2;}
+    footer .afterfooter {display: block;}
+    footer .afterfooter .row {display: block;}
+    footer .afterfooter .row .span3 {margin-top: 1rem;}
 }
 @media screen and (max-width: 35rem) {
     footer .row {gap: 2rem 5rem;}
