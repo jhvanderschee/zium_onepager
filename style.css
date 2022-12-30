@@ -5,7 +5,7 @@ body, a {color: #212121; text-decoration: none;}
 img {display: block; max-width: 100%;}
 .container {max-width: 62rem; margin: 0 auto; padding: 0 1rem;}
 .button {background: rgb(60, 133, 153); padding: 0.85rem 3.6rem 0.85rem 1.8rem; color: white; display: inline-block; position: relative; transition: background 0.3s ease-in-out;}
-.button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out;}
+.button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out; top: 50%; transform: translateY(-0.6rem);}
 .button:hover {background: #212121;}
 .button:hover::before, .button:hover::after {right: 1rem;}
 .backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.25); color: transparent; font-weight: 700; position: absolute; line-height: 0.9; z-index: -1; pointer-events: none; font-size: 40rem; opacity: 0.6; user-select: none;}
@@ -148,9 +148,17 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 @media screen and (max-width: 95rem) {
     .carousel .sideways {display: none;}
 }
+@media screen and (max-width: 60rem) {
+    .carousel ul li .container .title {font-size: 4rem;}
+    .carousel ul li {height: 36rem;}
+}
+@media screen and (max-width: 45rem) {
+    .carousel ul li .container .title {font-size: 3rem;}
+    .carousel ul li {height: 32rem;}
+}
 @media screen and (max-width: 30rem) {
-.carousel ul li .container .title {font-size: 3rem;}
-.carousel ul li {height: 34rem;}
+.carousel ul li .container .title {font-size: 2rem;}
+.carousel ul li {height: 28rem;}
 }
 
 
@@ -159,10 +167,14 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
 .reasons .container > a {width: 20rem; padding: 4.5rem 2.8rem 0 2.8rem; position: relative; left: 2rem;}
 .reasons .container > a .backgroundtext {font-size: 7.5rem; left: 0; top: 0;}
 .reasons .container > a h2 {font-weight: 500; font-size: 1.5rem; margin-bottom: 0.5rem;}
-.reasons .container > a .backgroundtext {transition: all 0.25s ease-in-out;}
+.reasons .container > a .backgroundtext {transition: color 0.25s ease-in-out;}
 .reasons .container > a:hover .backgroundtext {color: #f2f2f2; -webkit-text-stroke-color: #f2f2f2;}
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 40rem) {
     .reasons .container > a {width: 100%; padding-right: 1rem; left: 0;}
+}
+@media screen and (max-width: 30rem) {
+    .reasons .container > a {width: 100%; padding-right: 0rem; padding-left: 0rem;}
+    .reasons .container > a .backgroundtext {margin-left: -2.8rem;}
 }
 
 
@@ -367,7 +379,7 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
     .reviews {padding: 0;}
     .reviews > img {position: relative; height: 15rem;}
     .reviews .container {padding: 0;}
-    .reviews .container .carousel {padding: 0; padding: 3rem 3rem 3rem;}
+    .reviews .container .carousel {padding: 0; padding: 3.5rem 3rem 3rem;}
     .reviews .container .carousel .prev {left: 0.35rem;}
     .reviews .container .carousel .next {right: 0.35rem;}
     .reviews .container .carousel ul li > div:nth-child(1) {font-size: 1rem;}
