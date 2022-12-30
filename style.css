@@ -1,14 +1,15 @@
 *,*::after, *::before {margin: 0; padding: 0; box-sizing: border-box;}
-html {font-size: 20px; scroll-behavior: smooth;}
+html {font-size: 20px;}
 body {font-family: 'Space Grotesk', sans-serif; line-height: 1.4; font-size: 0.8rem; font-weight: 500; letter-spacing: .05em; overflow-x: hidden;}
 body, a {color: #212121; text-decoration: none;}
 img {display: block; max-width: 100%;}
 .container {max-width: 62rem; margin: 0 auto; padding: 0 1rem;}
 .button {background: rgb(60, 133, 153); padding: 0.85rem 3.6rem 0.85rem 1.8rem; color: white; display: inline-block; position: relative; transition: background 0.3s ease-in-out;}
-.button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out; top: 50%; transform: translateY(-0.6rem);}
+.button::before, .button::after {content: ""; margin-top: -0.35rem; right: 1.3rem; position: absolute; width: 1.8rem; height: 1.8rem; background: url(assets/images/arrow_right.svg) center center / contain no-repeat; filter: invert(100%);  transition: right 0.3s ease-in-out; top: 50%; transform: translateY(-0.55rem);}
 .button:hover {background: #212121;}
 .button:hover::before, .button:hover::after {right: 1rem;}
 .backgroundtext {-webkit-text-stroke: 1px rgba(0, 0, 0, 0.25); color: transparent; font-weight: 700; position: absolute; line-height: 0.9; z-index: -1; pointer-events: none; font-size: 40rem; opacity: 0.6; user-select: none;}
+.backgroundtext.vertical {transform: rotate(-90deg); transform-origin: right bottom;}
 .arrowlink {overflow: hidden;}
 .arrowlink, .arrowlink::before {cursor: pointer; min-width: 1.35rem; width: 1.35rem; height: 2.25rem; display: inline-block; background: url(assets/images/arrow_right.svg) center center / cover no-repeat; transition: all 0.25s ease-in-out;}
 .arrowlink::before {content: ""; margin-left: -2rem;  filter: contrast(0.1) sepia(100%) contrast(1.5) hue-rotate(145deg);}
@@ -67,7 +68,7 @@ section > div {padding: 6rem 0 6rem;}
     50% {opacity: 0;}
     100% {z-index: 50; opacity: 1;}
 }
-header {height: 5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: rgba(0, 0, 0, 0.1) 0rem 0rem 1.5rem 0rem; position: fixed; z-index: 9; width: 100%; background: white;}
+header {height: 5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: rgba(0, 0, 0, 0.1) 0rem 0rem 1.5rem 0rem; position: fixed; z-index: 51; width: 100%; background: white;}
 header h1 a img {height: 2.2rem;}
 header > div {padding-right: 2.5rem;}
 header nav a {position: relative; line-height: 1; padding: 0.5rem 0;}
@@ -235,7 +236,8 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    padding: 1rem 0
+    padding: 1rem 0;
+    background: white;
 }
 .marquee span {
     animation-name: marquee;
@@ -415,6 +417,14 @@ header a.togglemenu {position: absolute; height: 2rem; width: 2rem; background: 
     .blog .container > div.row > a {width: 100%;}
 }
 
+
+
+.single {padding-top: 5rem;}
+.single .title {margin-bottom: 2rem; overflow: hidden;}
+.single .title, .single .pretitle {text-align: center;}
+.single p {margin-bottom: 2em; font-size: 0.9rem;}
+.single .container > * {max-width: 40rem; margin-left: auto; margin-right: auto;}
+.single .backgroundtext {margin-left: -25vw;}
 
 
 
